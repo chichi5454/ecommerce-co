@@ -186,12 +186,11 @@ function showSlides(n) {
 
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
-    slides[i].classList.remove("fade"); // Remove fade class from all slides
+    slides[i].classList.remove("fade");
   }
 
   slides[slideIndex - 1].style.display = "block";
 
-  // Check if it's the initial display and remove fade animation
   if (n === 1) {
     slides[slideIndex - 1].classList.remove("fade");
   }
@@ -199,5 +198,4 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-// Call showSlides again to ensure the initial display
 showSlides(slideIndex);

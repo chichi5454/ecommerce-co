@@ -1196,9 +1196,18 @@ section {
 /*--------------------------------------------------------------
 # Stats Counter Section
 --------------------------------------------------------------*/
-.stats-counter .stats-item {
-  padding: 30px;
-  width: 100%;
+.hero .stats-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100;
+}
+.hero .stats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .stats-counter .stats-item span {
@@ -1232,7 +1241,29 @@ section {
   font-weight: 500;
   color: var(--color-secondary);
 }
+@media (max-width: 1000px) {
+  .hero .stats-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: nowrap;
 
+    width: 100;
+  }
+  .hero .stats-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .hero .stats-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
 /*--------------------------------------------------------------
 # Our Team Section
 --------------------------------------------------------------*/
@@ -1735,16 +1766,20 @@ section {
 .hero img {
   border-radius: 20px;
 }
-
 .hero h2 {
   margin-bottom: 20px;
   padding: 0;
   font-size: 48px;
   font-weight: 700;
   color: #fff;
+  text-align: center;
 }
 
 .hero .hero-btn {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   font-weight: 600;
   line-height: 1.5rem;
@@ -1756,24 +1791,6 @@ section {
   background-color: var(--color-secondary);
   color: #fff;
   border: none;
-}
-
-@media (max-width: 840px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-  }
-  .hero img {
-    display: flex;
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 575px) {
-  .hero h2 {
-    font-size: 30px;
-  }
 }
 
 .hero p {
@@ -1853,7 +1870,7 @@ section {
 /* hero slideshow */
 /* Slideshow container */
 .slideshow-container {
-  max-height: 100vh;
+  height: max-content;
   width: 100%;
   padding-left: 50px;
   padding-right: 50px;
@@ -1909,11 +1926,39 @@ section {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 50px 40px;
-  justify-content: center;
-  align-items: center;
   border-radius: 20px;
 }
 
+@media (max-width: 950px) {
+  .slideshow-container .overlay {
+    overflow: scroll;
+  }
+}
+@media (max-width: 450px) {
+  .slideshow-container {
+    height: 1200px;
+  }
+  .mySlides img {
+    height: 1200px;
+    object-fit: cover;
+  }
+  .mySlides .overlay {
+    overflow: auto;
+    height: 1200px;
+  }
+}
+
+/* continue */
+@media (max-width: 320px) {
+  .mySlides .overlay {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .mySlides .overlay h1 {
+    text-align: center;
+  }
+}
 /* Fading animation */
 .fade {
   animation-name: fade;
@@ -1929,71 +1974,25 @@ section {
   }
 }
 @media (max-width: 1130px) {
-  .hero {
-    background-image: url("../img/logo/banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    max-height: 1200px;
-    overflow: auto;
-  }
-
-  .hero img {
-    height: 100vh;
-  }
   .mySlides .overlay {
-    display: flex;
-    padding: 30px 10px;
-    gap: 5px;
-    max-height: 1200px;
-    overflow: auto;
-    justify-content: space-around;
-    text-align: center;
+    overflow: scroll;
   }
-}
-@media (max-width: 990px) {
-  .hero {
-    background-image: url("../img/logo/banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    max-height: 1500px;
-    overflow: auto;
-  }
-
-  .hero img {
-    height: 100vh;
-  }
-  .mySlides .overlay {
-    display: flex;
-    padding: 30px 10px;
-    gap: 5px;
-    max-height: 1400px;
-    overflow: auto;
-    justify-content: space-around;
-    text-align: center;
-  }
-}
-@media (max-width: 670px) {
-  .hero {
-    background-image: url("../img/logo/banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  .slideshow-container {
     padding: 5px;
   }
-
-  .hero img {
-    height: 1200px;
-  }
-  .mySlides .overlay {
-    display: flex;
-    padding: 10px;
-    gap: 5px;
-    max-height: 1200px;
-    overflow: auto;
+  /* .mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  } */
+  .next,
+  .prev {
+    margin-left: -40px;
+    margin-right: -40px;
   }
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
