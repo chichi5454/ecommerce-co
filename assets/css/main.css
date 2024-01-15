@@ -1753,7 +1753,7 @@ section {
 .hero {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 1200px;
   min-height: 30vh;
   background-color: var(--color-secondary);
   background-image: url("../img/logo/banner.jpg");
