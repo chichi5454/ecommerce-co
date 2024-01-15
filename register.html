@@ -19,26 +19,89 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
 
     <!-- Vendor CSS Files -->
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="assets/vendor/fontawesome-free/css/all.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+      .card {
+        margin-top: 5px;
+        position: relative;
+        background-color: chocolate;
+        background-size: cover;
+        padding: 25px;
+        border-radius: 28px;
+        max-width: 380px;
+        width: 100%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        font-family: "Poppins", sans-serif;
+      }
+
+      header,
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo img {
+        width: 48px;
+        margin-right: 10px;
+        border-radius: 3px;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+      }
+
+      h6 {
+        color: #fff;
+        font-size: 10px;
+        font-weight: 400;
+      }
+
+      h5.number {
+        margin-top: 4px;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      h5.name {
+        margin-top: 20px;
+      }
+
+      .card .card-details {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    </style>
 
     <!-- =======================================================
   * Template Name: Logis
@@ -55,7 +118,8 @@
       <div class="breadcrumbs">
         <div
           class="page-header d-flex align-items-center"
-          style="background-image: url('assets/img/page-header.jpg')">
+          style="background-image: url('assets/img/page-header.jpg')"
+        >
           <div class="container position-relative">
             <div class="row d-flex justify-content-center">
               <div class="col-lg-6 text-center">
@@ -84,12 +148,14 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div
-        class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
         <img
           src="assets/img/logo/logo.jpg"
           alt="caribbean logo"
           width="100px"
-          height="70px" />
+          height="70px"
+        />
 
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -106,9 +172,21 @@
                 <i class="bi bi-chevron-down dropdown-indicator"></i
               ></a>
               <ul>
-                <li><a href="#">Caribbean Cargo </a></li>
-                <li><a href="#">Caribbean Credit</a></li>
-                <li><a href="#">Caribbean Style</a></li>
+                <li>
+                  <a href="index.html" target="_blank"
+                    >Caribbean Cargo
+                  </a>
+                </li>
+                <li>
+                  <a href="caribbean-credit.html" target="_blank"
+                    >Caribbean Credit</a
+                  >
+                </li>
+                <li>
+                  <a href="caribbean-style.html" target="_blank"
+                    >Caribbean Style</a
+                  >
+                </li>
               </ul>
             </li>
             <li><a href="contact.html">Contact</a></li>
@@ -145,23 +223,48 @@
           <label for="reason_to_join">Reason to Join:</label>
           <textarea id="reason_to_join" rows="4" required></textarea>
 
-          <button type="button" onclick="generateCard()">Generate Card</button>
+          <button type="button" id="generateCardButton">Generate Card</button>
+          <br>
+          <button style="margin-top: 20px;" onclick="REDIRECT()" >GO TO VIEW CARD</button>
         </form>
       </div>
 
       <!-- Form to input and view card -->
-      <div class="input-form-container">
+      <!-- <div class="input-form-container">
         <h4>VIEW CARD</h4>
         <form id="viewCardForm">
           <label for="inputCardNumber">Enter Card Number:</label>
           <input type="text" id="inputCardNumber" required />
-
-          <button type="button" onclick="viewCard()">View Card</button>
-        </form>
-        <div id="cardOutput"></div>
+          <button type="button" id="viewCardButton">View Card</button> -->
+          <!-- CARD -->
+          <!-- <div class="card" id="card">
+            <header>
+              <span class="logo">
+                <img
+                  src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                  alt=""
+                />
+                <h5>Caribbean Cargo</h5>
+              </span>
+            </header> -->
+<!-- 
+            <div class="card-details">
+              <div class="name-number">
+                <h6>Card Number</h6>
+                <h5 class="number" id="card_number">ZA65DSW8E</h5> -->
+                <!-- <span style="height:;">Points</span> -->
+                <!-- <h5 class="name" id="fullName">MR. ROKIT ROBINSON</h5> -->
+              <!-- </div> -->
+              <!-- <div class="valid-date">
+                <h6>Valid Thru</h6>
+                <h5>05/28</h5>
+              </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </form> -->
+        <!-- <div id="cardOutput"></div> -->
+        <!-- <button onclick="downloadCard()">Download Card</button> -->
       </div>
-
-      <script src="/Logis/assets/js/register.js"></script>
     </div>
 
     <div class="container">
@@ -216,7 +319,8 @@
           </div>
 
           <div
-            class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
             <h4>Contact Us</h4>
             <span>
               <strong>Nairobi Region Agent </strong>
@@ -265,5 +369,82 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Send and receive card details -->
+    <!-- <script src="/Logis/assets/js/register.js"></script> -->
+    <script>
+      document
+        .getElementById("generateCardButton")
+        .addEventListener("click", generateCard);
+      async function generateCard() {
+        const fullName = document.getElementById("full_name").value;
+        const email = document.getElementById("email").value;
+        const contact = document.getElementById("contact").value;
+        const userType = document.getElementById("user_type").value;
+        const reasonToJoin = document.getElementById("reason_to_join").value;
+
+        try {
+          const data = await fetch("https://caribbeancargo.vercel.app", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              fullname: fullName,
+              email: email,
+              contact: contact,
+              user_type: userType,
+              reason_to_join: reasonToJoin,
+            }),
+          });
+
+          const res = await data.json();
+          const user = res['user']
+          // window.location = `view-card.html?fullname=${"zaa"}&email=${"email"}&contact=${'contact'}&user_type=${'user_type'}&card_number=${'card_number'}`;
+          
+          if(!user){
+            alert(`RESULTS: ${JSON.stringify(user)}`);
+          }else{
+            window.location = `view-card.html?fullname=${user.fullname}&email=${user.email}&contact=${user.contact}&user_type=${user.user_type}&card_number=${user.card_number}`;
+          }
+
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      // document
+      //   .getElementById("viewCardButton")
+      //   .addEventListener("click", viewCard);
+      // async function viewCard() {
+      //   const cardNumber = document.getElementById("inputCardNumber").value;
+      //   try {
+      //     const data = await fetch("http://127.0.0.1:8000/view-card", {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //       body: JSON.stringify({
+      //         card_number: cardNumber,
+      //       }),
+      //     });
+
+      //     const res = await data.json();
+      //     alert(`RESULTS: ${JSON.stringify(res, null, 2)}`);
+      //     document.getElementById("card_number").innerText =
+      //       res.user.card_number;
+      //     document.getElementById("fullName").innerText = res.user.fullname;
+      //   } catch (error) {
+      //     console.error("Error:", error);
+      //   }
+      // }
+    </script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+    <script>
+      function REDIRECT(){
+        window.location = 'view-card.html'
+      }
+    </script>
   </body>
 </html>
